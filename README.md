@@ -126,3 +126,15 @@ id,lotto_id,rank
 
 - 개발이 완료되면, 본인의 github 리포지토리에 올리고 해당 주소를 보내주시면 됩니다.
 - 응시자가 개발하면서 고민했던 점, 혹은 어려웠던 점을 프로젝트 설명에 간단히 적어주시면 됩니다. (선택사항)
+
+## 프로젝트 설명
+
+- 라이브러리 추가 사항
+- implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //jpa사용하기 위함
+  implementation 'com.h2database:h2' //h2데이터베이스 사용하기 위함
+
+- 개발하면서 고민했던 점, 어려운점
+  1. AOP구현 http에서 api를 실행시켰을때 Client정보가 제대로 표시 되었지만 테스트 코드에서는 정보가 확인이 안되는 문제
+  - 이를 해결하기위해 test코드에 별도 헤더에 Client정보를 붙이고 http요청이 아닌 테스트 코드 요청에서도 client의 정보를 나오겠금 변경
+  2. h2-console 필터링 문제
+  - 특수문자가 포함되어 있을경우 접속을 차단하는 Filter를 구현하면서 h2-console이 막히는 문제 발생 이를 해결하기 위해 제외되는 패턴을 추가하여 문제를 해결
